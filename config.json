@@ -1,0 +1,14 @@
+{
+	"games": [
+		{
+			"name": "Space Invaders",
+			"command": "spc.pde",
+			"image": "/home/nate/git/arcade-machine-mcp-gui/src/main/java/data/space_invaders.png"
+		},
+		{
+			"name": "Other Game",
+			"command": "spc.pde",
+			"image": "/home/nate/git/arcade-machine-mcp-gui/src/main/java/data/space_invaders.png"
+		}
+	]
+}
