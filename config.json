@@ -10,5 +10,6 @@
 			"command": "spc.pde",
 			"image": "/home/nate/git/arcade-machine-mcp-gui/src/main/java/data/space_invaders.png"
 		}
-	]
+	],
+	"gui": "/home/nate/git/arcade-machine-mcp-gui/build/libs/arcade-machine-mcp-gui-all-1.0.0.jar"
 }

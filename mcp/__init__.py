@@ -1,13 +1,14 @@
 import socket
 
 from mcp import api
-from mcp.config import load_games
+from mcp.config import load_games, start_gui
 
 DEFAULT_SOCKET = '/tmp/mcp'
 BUF_SIZE = 255
 
 
 def main():
+	start_gui()
 	games = load_games()
 
 	print(games)
@@ -27,4 +28,3 @@ def main():
 				client.send('{}\n'.format(len(games)).encode('ascii'))
 
 			line = client.recv(BUF_SIZE).strip()
-
