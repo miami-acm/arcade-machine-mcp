@@ -19,12 +19,18 @@ def main():
 	while True:
 		client, addr = sock.accept()
 
-		line = b'MESSAGE'
+		line = 'MESSAGE'
 		while line != b'':
 			if line == api.GET_GAMES:
 				for game in games:
 					client.send('{}\n'.format(str(game)).encode('ascii'))
 			elif line == api.NUM_GAMES:
 				client.send('{}\n'.format(len(games)).encode('ascii'))
+			else:
+				match = api.RUN_GAME.match(line)
+				if match:
+					id_num = int(match.group('id'))
+					game = games[id_num]
+					print('running ' + str(game))
 
-			line = client.recv(BUF_SIZE).strip()
+			line = client.recv(BUF_SIZE).strip().decode('ascii')

@@ -17,7 +17,10 @@ def _load_config(filename='config.json'):
 
 def load_games(filename='config.json'):
 	config = _load_config(filename)
-	games = [Game(i['name'], i['command'], i['image']) for i in config.games]
+	games = [
+		Game(g['name'], g['command'], g['image'], index)
+		for index, g in enumerate(config.games)
+	]
 
 	return games
 
